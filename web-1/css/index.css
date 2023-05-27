@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(90deg, #dce35b, #45b649);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gnb { 
+  display: flex;
+  background-color: #Fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #0000005b;
+}
+
+
+.gnb a {
+  text-decoration: none;
+  color: #000;
+  width: 80px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.gnb a::before,
+.gnb a::after {
+  content: attr(data-link);
+  position: absolute;
+  transition: 0.3s;
+}
+
+.gnb a::before {
+  top: 5px;
+}
+
+.gnb a::after {
+  top: 100%;
+  color: #45b649;
+}
+
+.gnb a:hover::before {
+  top: -100%;
+}
+.gnb a:hover::after {
+  top: 5px;
+  animation: scale 1s linear infinite;
+}
+
+@keyframes scale {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
